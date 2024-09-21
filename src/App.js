@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Krishna from './webpages/Krishna.js';
+import Sanjit from './webpages/Sanjit.js';
+import Navbar from './elements/Navbar'; // Import the Navbar
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        {/* Route for the "Hi" page */}
+        <Route path="/krishna" element={<Krishna />} />
+
+        {/* Route for the "Hello" page */}
+        <Route path="/sanjit" element={<Sanjit />} />
+      </Routes>
+    </Router>
   );
 }
 
